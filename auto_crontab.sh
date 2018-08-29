@@ -5,6 +5,7 @@ sudo wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1n
 
 CUR_PATH=$(cd "$(dirname "$0")"; pwd)
 
+SCRIPT_NAME="ssr_check.sh"
 # 要定时执行的任务
 TASK_COMMAND="sudo bash /tmp/ssr_check.sh"
 # 要添加的crontab任务
