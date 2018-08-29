@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #sudo wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/auto_crontab.sh && chmod +x auto_crontab.sh && bash auto_crontab.sh
-sudo wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/ssr_check.sh /usr/local/ssr_check.sh && chmod +x /usr/local/ssr_check.sh
+sudo wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/ssr_check.sh -O /tmp/ssr_check.sh && chmod +x /tmp/ssr_check.sh
 
 
 CUR_PATH=$(cd "$(dirname "$0")"; pwd)
 
 # 要定时执行的任务
-TASK_COMMAND="sudo bash /usr/local/ssr_check.sh"
+TASK_COMMAND="sudo bash /tmp/ssr_check.sh"
 # 要添加的crontab任务
 # 每1分钟执行一次 任务
 CRONTAB_TASK="*/1 * * * * ${TASK_COMMAND}"
