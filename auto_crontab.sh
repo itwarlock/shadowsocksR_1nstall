@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/auto_crontab.sh && chmod +x auto_crontab.sh && bash auto_crontab.sh
-sudo wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/ssr_check.sh && chmod +x ssr_check.sh
+wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/ssr_check.sh /tmp/ssr_check.sh && chmod +x /tmp/ssr_check.sh  >/dev/null
 
 
 CUR_PATH=$(cd "$(dirname "$0")"; pwd)
 
 # 要定时执行的任务
-TASK_COMMAND="~/ssr_check.sh"
+TASK_COMMAND="bash /tmp/ssr_check.sh"
 # 要添加的crontab任务
 # 每1分钟执行一次 任务
 CRONTAB_TASK="*/1 * * * * ${TASK_COMMAND}"
@@ -18,7 +18,7 @@ function create_crontab()
 {
     echo 'Create crontab task...'
     crontab -l > ${CRONTAB_BAK_FILE} 2>/dev/null
-    sed -i "/.*${CRONTAB_TASK}/d" ${CRONTAB_BAK_FILE}  # 已存在任务时会被sed删除，防止重复添加
+    #sed -i "/.*${CRONTAB_TASK}/d" ${CRONTAB_BAK_FILE}  # 已存在任务时会被sed删除，防止重复添加
     echo "${CRONTAB_TASK}" >> ${CRONTAB_BAK_FILE}
     crontab ${CRONTAB_BAK_FILE}
 
