@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/auto_crontab.sh && chmod +x auto_crontab.sh && bash auto_crontab.sh
-wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/ssr_check.sh /tmp/ssr_check.sh && chmod +x /tmp/ssr_check.sh  >/dev/null
+#sudo wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/auto_crontab.sh && chmod +x auto_crontab.sh && bash auto_crontab.sh
+sudo wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/ssr_check.sh /tmp/ssr_check.sh && chmod +x /tmp/ssr_check.sh  >/dev/null
 
 
 CUR_PATH=$(cd "$(dirname "$0")"; pwd)
