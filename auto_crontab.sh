@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#wget -N --no-check-certificate https://github.com/itwarlock/shadowsocksR_1nstall/raw/master/auto_crontab.sh && chmod +x auto_crontab.sh && bash auto_crontab.sh
 CUR_PATH=$(cd "$(dirname "$0")"; pwd)
 
 # 要定时执行的任务
